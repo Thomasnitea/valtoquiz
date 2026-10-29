@@ -250,7 +250,7 @@
 
     if (quizState.current_question_id) {
       question = await fetchQuestion(quizState.current_question_id);
-      myAnswer = await fetchMyAnswer(quizState.current_question_id);
+      myAnswer = player ? await fetchMyAnswer(quizState.current_question_id) : null;
     } else {
       question = null;
       myAnswer = null;
