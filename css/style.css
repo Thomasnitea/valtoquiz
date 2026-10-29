@@ -1,0 +1,238 @@
+:root {
+  --kleur-achtergrond: #121622;
+  --kleur-kaart: #1c2235;
+  --kleur-tekst: #f2f4f8;
+  --kleur-subtekst: #aab2c8;
+  --kleur-accent: #ff4f8b;
+  --kleur-goed: #35d07f;
+  --kleur-fout: #ff5c5c;
+  --kleur-knop: #ff4f8b;
+  --kleur-knop-tekst: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--kleur-achtergrond);
+  color: var(--kleur-tekst);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 1.6rem;
+  line-height: 1.3;
+}
+
+p {
+  color: var(--kleur-subtekst);
+}
+
+button {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  background: var(--kleur-knop);
+  color: var(--kleur-knop-tekst);
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+button:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+.error {
+  color: var(--kleur-fout);
+}
+
+/* ---- Speler (telefoon) ---- */
+
+body.speler .card {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+body.speler input[type='text'] {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 14px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: 1px solid #39405c;
+  background: var(--kleur-kaart);
+  color: var(--kleur-tekst);
+}
+
+body.speler label {
+  display: block;
+  text-align: left;
+  color: var(--kleur-subtekst);
+  margin-top: 8px;
+}
+
+body.speler .opties {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+body.speler .optie-knop {
+  padding: 18px;
+  font-size: 1.15rem;
+  text-align: left;
+  background: var(--kleur-kaart);
+  border: 2px solid #39405c;
+  color: var(--kleur-tekst);
+}
+
+body.speler .optie-knop:active {
+  border-color: var(--kleur-accent);
+}
+
+body.speler .countdown {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--kleur-accent);
+  margin: 8px 0;
+}
+
+body.speler .vraag-nummer {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  color: var(--kleur-subtekst);
+}
+
+body.speler .feedback {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+body.speler .feedback.goed {
+  color: var(--kleur-goed);
+}
+
+body.speler .feedback.fout {
+  color: var(--kleur-fout);
+}
+
+body.speler .leaderboard {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  text-align: left;
+}
+
+body.speler .leaderboard li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  background: var(--kleur-kaart);
+}
+
+body.speler .leaderboard li.eigen-score {
+  outline: 2px solid var(--kleur-accent);
+}
+
+/* ---- Host (presentatie) ---- */
+
+body.host .host-scherm {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+body.host h1 {
+  font-size: 2.4rem;
+}
+
+body.host .qr {
+  background: white;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+body.host .join-link {
+  font-size: 1.2rem;
+  color: var(--kleur-accent);
+}
+
+body.host .spelers-teller,
+body.host .teller {
+  font-size: 1.3rem;
+}
+
+body.host .opties-lijst {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  font-size: 1.4rem;
+  margin: 24px 0;
+}
+
+body.host .opties-lijst li {
+  background: var(--kleur-kaart);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+body.host .countdown {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--kleur-accent);
+}
+
+body.host .correct-antwoord {
+  font-size: 1.6rem;
+  color: var(--kleur-tekst);
+}
+
+body.host .leaderboard-lijst {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  font-size: 1.6rem;
+  text-align: left;
+}
+
+body.host .leaderboard-lijst li {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  background: var(--kleur-kaart);
+}
+
+body.host .leaderboard-lijst li:first-child {
+  background: var(--kleur-accent);
+  color: #fff;
+  font-weight: 700;
+}
